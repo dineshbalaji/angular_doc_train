@@ -1,0 +1,26 @@
+<div>
+    <h3>Template Syntax </h3>
+    <ul>
+        <li>we couldn't use any side effect operator which is change value in  template itself : like : ++,--, +=,-= OR bite wise operator {{i+2}}</li>
+        <li>template variable value get refresh only when any of browser event binded into template and event triggered by browser</li>
+    </ul>
+    <input id="name" type="text"  #refVar (input)="null" /> <br/>
+    <label for="name" [attr.aria-label]=i> {{refVar.value}} interpolation & property binding are bind value to DOM property .So if we want bind value to attribute then use 'attr.' prefixing</label>
+    <p [class.green]='true'> color green applied using class.className property binding</p>
+    <p [ngClass]="{green:true,size:true}"> multiple classes are applied using ng-class</p>
+
+    <h3>Temp Component</h3>
+    <p>Temp Component change 'i' value</p>
+    <temp [propInfo]="i" (propInfoChange)="i=$event" ></temp>
+    <p>we can achieve two binding using banna in box  [()]  mixing property and event bindings </p>
+    <temp [(propInfo)]=i ></temp>
+    <p>Safe navigation (?.) </p>
+    <p>{{nullObj?.prop1?.prop2}}</p>
+    <p>ngModel capture every changes in input box</p>
+    <p>To use 'ngModel' we should import FormsModule from  '@angular/forms'</p>
+    <input type="text" [(ngModel)]="modelName"  >
+    <p>{{modelName}}</p>
+    <p>alternative to caputure changes only on particular event binding</p>
+    <input type="text" [value]="nonModelName" (blur)="nonModelListen($event)" >
+    <p>{{nonModelName}}</p>
+</div>

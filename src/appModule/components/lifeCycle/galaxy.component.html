@@ -1,0 +1,15 @@
+<div>
+    <h1>Galaxy | Grand Parent Component</h1>
+    <div>
+        <label for="gravity">Gravity</label>
+        <input id="gravity" type="number"  [(ngModel)]="gravityNo"/>
+        <button (click)="earthOn = !earthOn">{{earthOn? 'Destory Plant' : 'Create Plant'}}</button>
+        <!--Plant | Child Component-->
+        <Plant *ngIf="earthOn" [gravity]="gravityNo">
+            <div>
+                <Moon [gravity]="gravityNo"></Moon>
+                <Moon [gravity]="gravityNo"></Moon>
+            </div>
+        </Plant>
+    </div>
+</div>

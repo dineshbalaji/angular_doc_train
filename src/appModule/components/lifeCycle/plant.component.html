@@ -1,0 +1,14 @@
+<div>
+    <h2>Plant [child Component]</h2>
+    <button (click)="treeOn = !treeOn">{{treeOn? 'Destory Tree' : 'Create Tree'}}</button>
+    <p>Gravity received from Galaxy: {{gravity}}</p>
+
+    <Tree *ngIf="treeOn"></Tree>
+    <ng-content></ng-content>
+    <div>
+        <!--<h5>Voice of Tree to Earth</h5>
+        <ul><li *ngFor="let voice of tree?.voices"></li>{{voice}}</ul>
+        <h5>Voice of Moon to Earth</h5>
+        <ul><li *ngFor="let voice of moon?.voices"></li>{{voice}}</ul>-->
+    </div>
+</div>
